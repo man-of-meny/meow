@@ -19,6 +19,7 @@ def get_valid_measurment(prompt,error_msg="invalid measurement try meters or cen
             break
         else:
             print(error_msg)
+    return value
 def get_valid_shape(prompt,error_msg="invalid shape choose one from the list"):
     valid_shapes = [
         "circle",
@@ -38,10 +39,12 @@ def get_valid_shape(prompt,error_msg="invalid shape choose one from the list"):
     ]
     print(*valid_shapes)
     while True:
+        value = input(prompt)
         if prompt in valid_shapes:
             break
         else:
             print(error_msg)
+    return value
 
 class shape_type(Enum):
     CIRCLE = "circle"
